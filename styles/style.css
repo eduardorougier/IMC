@@ -1,0 +1,80 @@
+/* inicialización de propiedades */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+body {
+    background-image: url(../img/pattern.jpg);
+    background-attachment: fixed;
+}
+
+main {
+    width: 700px;
+    margin: 0 auto;
+    background: #3d7a50;
+    padding: 30px 100px;
+    text-align: center;
+}
+
+.imgSiluetas {
+    height: 100%;
+    display: grid;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+.titulo {
+    font-size: 3em;
+}
+
+.parrafo {
+    margin-top: 30px;
+}
+
+.intro {
+    text-align: justify;
+}
+
+.botonStart {
+    margin: 50px;
+}
+
+.resultados {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.imprimir {
+    font-weight: 600;
+    padding-left: 7px;
+}
+
+.mostrarSilueta {
+    display: none;
+    height: auto;
+    
+}
+
+.imgSiluetas{
+    height: auto;
+}
+
+
+fieldset {
+    margin: 10px 0;
+    border: 0;
+}
+
+.input-group {
+    margin: 10px;
+}

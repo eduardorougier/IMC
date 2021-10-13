@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">    
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
+
+    <!-- Link bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>IMCalc(t,m) - tu calculadora de índice de masa corporal amiga</title>
+</head>
+<body>
+    
+
+    <main>
+        
+        <!-- Primer sección con titulos de la página -->
+        <section>
+            <h1 id="titulo">IMCalc(t,p)</h1>
+            <h2 id="subtitulo">Tu calculadora de índice de masa corporal favorita!</h2>
+        </section>
+
+        <hr>
+
+        <!-- Segunda sección con todo el módulo para inicio de sesión -->
+        <section id="login">
+            
+            <div id="inputsLogin">
+                <div class="input-group">
+                    <span class="input-group-text" id="input-group-left-example">Username</span>
+                    <input type="text" class="form-control" placeholder="eduar" aria-label="Username" aria-describedby="input-group-left" required id="userIngresado">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text" id="input-group-left-example">Password</span>
+                    <input type="password" class="form-control" placeholder="password" aria-label="Username" aria-describedby="input-group-left" required id="passwordIngresado">
+                </div>
+            </div>
+            
+            
+            <button type="button" class="btn btn-primary" id="botonValidarUsuario">LOGIN</button>
+            <button type="button" class="btn btn-primary" id="botonRegistrarUsuario">REGISTRARSE</button>
+            <button type="button" class="btn btn-primary" id="botonCerrarSesion">CERRAR SESION</button>
+            
+            <!-- Párrafo en el cual se informa que el usuario y contraseña son correctos -->
+            <p id="parrafo" class="parrafo"></p>
+            
+        </section>
+
+        <hr>
+
+        
+        <!-- Tercer sección con el contenido para interactuar con el programa -->
+        <section id="contenedorPrograma">
+            <section id="contenedorCalculadora">
+                <form action="">
+                    <fieldset>
+                        <div class="input-group">
+                            <span class="input-group-text" id="input-group-left-example">Nombre</span>
+                            <input type="text" class="form-control"  aria-label="Username" aria-describedby="input-group-left" required id="nombre">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-text" id="input-group-left-example">Apellido</span>
+                            <input type="text" class="form-control"  aria-label="Username" aria-describedby="input-group-left" required id="apellido">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="input-group">
+                            <label for="customRange3" class="form-label">ALTURA: </label>
+                            <p id="imprimirAltura" class="imprimir">170</p> 
+                            <input type="range" class="form-range"  step="1" aria-label="Username" aria-describedby="input-group-left" min="130" max="220"required id="altura" value="170">
+                        </div>
+                        <div class="input-group">
+                            <label for="customRange3" class="form-label">PESO: </label>
+                            <p id="imprimirPeso" class="imprimir"> 70</p>
+                            <input type="range" class="form-range"  step="1" aria-label="Username" aria-describedby="input-group-left" min="50" max="150"required id="peso" value="70">
+                        </div>
+                        
+                        <button type="button" class="btn btn-primary" id="botonCalcularIMC">CALCULAR</button>
+                    </fieldset>
+                </form>
+    
+            </section>
+            
+            <div class="resultados" id="resultado">
+                
+                <section id="imprimir">
+                    <!-- en esta sección se van a imprimir los resultados de cada cálculo-->
+                </section>
+
+                <!-- Esta sección contiene las imágenes correspondientes a todos los resultados, se mostrara en cada caso solo una imagen de acuerdo al IMC -->
+                <section id="imgSiluetas" class="imgSiluetas">
+                    <img src="img/silueta1.png" alt="silueta1" class="mostrarSilueta" id="siluetas1">
+                    <img src="img/silueta2.png" alt="silueta2" class="mostrarSilueta" id="siluetas2">
+                    <img src="img/silueta3.png" alt="silueta3" class="mostrarSilueta" id="siluetas3">
+                    <img src="img/silueta4.png" alt="silueta4" class="mostrarSilueta" id="siluetas4">
+                    <img src="img/silueta5.png" alt="silueta5" class="mostrarSilueta" id="siluetas5">
+                </section>
+            </div>
+              
+            <!-- En esta sección se guarda registro de todos los cálculos que se hicieron -->
+            <section class="contenedorRegistros" id="registros">
+                <br>
+                <br>
+                <h5>Registro de cálculos:</h5>
+                <ul id="listaRegistros">
+    
+                </ul>
+            </section>
+
+            <hr>
+        </section>
+        
+        <!-- Info sobre el IMC para acompañar la página -->
+        <p class="intro">Una medida de la obesidad se determina mediante el índice de masa corporal (IMC), que se calcula dividiendo los kilogramos de peso por el cuadrado de la estatura en metros (IMC = peso [kg]/ estatura [m2]).</p>
+        <p class="intro">Según el Instituto Nacional del Corazón, los Pulmones y la Sangre de los Estados Unidos (NHLBI), el sobrepeso se define como un IMC de más de 25. Se considera que una persona es obesa si su IMC es superior a 30. Usted puede determinar su IMC con la calculadora que se encuentra a continuación. </p>
+        <p class="intro">Con la cifra del IMC puede averiguar su composición corporal en la tabla que aparece debajo de la calculadora.</p>
+
+    </main>
+    
+    <!-- JQuery -->
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+       
+    <!--Archivo JS -->
+    <script src="scripts/scripts.js"></script>
+
+    <!-- Link a bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    
+ 
+    
+    
+</body>
+
+</html>
